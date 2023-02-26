@@ -18,13 +18,11 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void saveUser(User user) {
         entityManager.persist(user);
-        System.out.println("Пользователь добавлен");
     }
 
     @Override
     @SuppressWarnings("unchecked")
     public List<User> listUsers() {
-        System.out.println("Лист пользователей получен");
         return entityManager.createQuery("from User").getResultList();
     }
 
